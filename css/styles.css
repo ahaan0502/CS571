@@ -81,6 +81,20 @@ select { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-
 .chart-placeholder .release-cell { stroke: #fff; stroke-width: 1px; }
 .chart-placeholder .cell-count { font-size: 10px; font-weight: 700; pointer-events: none; text-anchor: middle; }
 .chart-placeholder .chart-caption { fill: #647089; font-size: 11px; }
+.chart-placeholder .director-row { stroke: #e8edf5; }
+.chart-placeholder .director-dot { stroke: #fff; stroke-width: 2px; }
+.people-chart-wrapper { width: 100%; }
+.people-chart-wrapper svg { min-width: 560px; }
+.people-detail { margin: 18px 4px 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+.people-detail h3 { margin: 0; color: var(--ink); font-size: 1.15rem; }
+.people-detail-heading { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.people-detail-heading > span { white-space: nowrap; font-size: 0.8rem; }
+.people-detail-label { margin: 14px 0 8px; color: var(--ink); font-weight: 800; }
+.cast-list { display: flex; flex-wrap: wrap; gap: 7px; }
+.cast-list span { padding: 6px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--ink); }
+.cast-list b { color: var(--accent); }
+.film-list { display: grid; gap: 5px; margin: 0; padding-left: 18px; }
+.film-list li span { float: right; margin-left: 12px; color: var(--accent); font-weight: 700; }
 .chart-placeholder .domain, .chart-placeholder .tick line { stroke: #cfd7e6; }
 .chart-placeholder .tick text { fill: #647089; font-size: 10px; }
 .methodology-panel { margin-top: 18px; }

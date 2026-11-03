@@ -1,5 +1,6 @@
 import { renderGenreChart } from "./charts/genreChart.js";
 import { renderReleaseChart } from "./charts/releaseChart.js";
+import { renderPeopleChart } from "./charts/peopleChart.js";
 
 const filterIds = ["genre-filter", "budget-filter", "season-filter", "votes-filter"];
 
@@ -70,6 +71,7 @@ function renderSummary() {
     `${movies.length.toLocaleString()} of ${state.movies.length.toLocaleString()} ROI-qualified movies are currently shown.`;
   renderGenreChart(document.querySelector("#genre-chart"), movies);
   renderReleaseChart(document.querySelector("#release-chart"), movies);
+  renderPeopleChart(document.querySelector("#people-chart"), movies);
 }
 
 function bindControls() {
