@@ -108,6 +108,14 @@ function bindControls() {
     };
     renderSummary();
   });
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      if (state.movies.length) renderSummary();
+    }, 150);
+  });
 }
 
 async function initialize() {

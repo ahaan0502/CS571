@@ -108,7 +108,8 @@ def prepare_movies(credits):
                     "season": season_for_month(parsed_date.month),
                     "budget": budget,
                     "revenue": revenue,
-                    "roi": round(roi, 4),
+                    # Keep full precision because the charts use logarithmic scales.
+                    "roi": roi,
                     "profit": revenue - budget,
                     "outcome": outcome_for_roi(roi),
                     "budgetTier": budget_tier(budget),
