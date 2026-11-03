@@ -67,6 +67,19 @@ select { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-
 .chart-panel-wide { grid-column: 1 / -1; }
 .chart-status { color: var(--muted); font-size: 0.75rem; font-weight: 700; }
 .chart-placeholder { display: grid; min-height: 300px; place-items: center; border: 1px dashed var(--line); border-radius: 12px; background: linear-gradient(135deg, #fbfcff, var(--accent-soft)); color: var(--muted); text-align: center; }
+.chart-placeholder:has(svg) { display: block; padding: 8px; background: #fff; border-style: solid; overflow-x: auto; }
+.chart-placeholder svg { display: block; width: 100%; min-width: 620px; height: auto; overflow: visible; }
+.chart-placeholder .grid line { stroke: #e8edf5; stroke-dasharray: 2 3; }
+.chart-placeholder .grid path { display: none; }
+.chart-placeholder .box-whisker, .chart-placeholder .box-cap { stroke: #3157d5; stroke-width: 1.5; }
+.chart-placeholder .box-rect { fill: #dbe4ff; stroke: #3157d5; stroke-width: 1.5; }
+.chart-placeholder .median-line { stroke: #172033; stroke-width: 2.5; }
+.chart-placeholder .movie-point { fill: #3157d5; opacity: 0.28; }
+.chart-placeholder .movie-point:hover { opacity: 0.9; }
+.chart-placeholder .break-even-line { stroke: #e08c3a; stroke-dasharray: 5 4; }
+.chart-placeholder .break-even-label, .chart-placeholder .axis-label { fill: #647089; font-size: 11px; }
+.chart-placeholder .domain, .chart-placeholder .tick line { stroke: #cfd7e6; }
+.chart-placeholder .tick text { fill: #647089; font-size: 10px; }
 .methodology-panel { margin-top: 18px; }
 .methodology-panel p:not(.eyebrow):not(.data-status) { max-width: 760px; margin-bottom: 0; color: var(--muted); line-height: 1.6; }
 .data-status { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }

@@ -1,3 +1,5 @@
+import { renderGenreChart } from "./charts/genreChart.js";
+
 const filterIds = ["genre-filter", "budget-filter", "season-filter", "votes-filter"];
 
 const state = {
@@ -65,6 +67,7 @@ function renderSummary() {
   document.querySelector("#kpi-budget").textContent = medianBudget === null ? "—" : money.format(medianBudget);
   document.querySelector("#data-status").textContent =
     `${movies.length.toLocaleString()} of ${state.movies.length.toLocaleString()} ROI-qualified movies are currently shown.`;
+  renderGenreChart(document.querySelector("#genre-chart"), movies);
 }
 
 function bindControls() {
