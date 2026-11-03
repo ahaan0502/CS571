@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An interactive exploration of movie return on investment by genre, release timing, and creative talent."
+    />
+    <title>Movie ROI Explorer</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">TMDB 5000 movie dataset</p>
+        <h1>Movie ROI Explorer</h1>
+        <p class="hero-copy">
+          Explore which kinds of movies are most likely to earn back their
+          budget—and which creative choices are associated with stronger returns.
+        </p>
+      </header>
+
+      <section class="panel controls-panel" aria-labelledby="filters-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Explore the evidence</p>
+            <h2 id="filters-title">Filter the movie portfolio</h2>
+          </div>
+          <button id="reset-filters" class="button button-secondary" type="button">
+            Reset filters
+          </button>
+        </div>
+        <div class="controls-grid">
+          <label>
+            Genre
+            <select id="genre-filter">
+              <option value="all">All genres</option>
+            </select>
+          </label>
+          <label>
+            Budget tier
+            <select id="budget-filter">
+              <option value="all">All budget tiers</option>
+            </select>
+          </label>
+          <label>
+            Release season
+            <select id="season-filter">
+              <option value="all">All seasons</option>
+            </select>
+          </label>
+          <label>
+            Minimum votes
+            <select id="votes-filter">
+              <option value="0">No minimum</option>
+              <option value="100">100+</option>
+              <option value="1000">1,000+</option>
+              <option value="10000">10,000+</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="kpi-grid" aria-label="Portfolio summary">
+        <article class="kpi-card">
+          <span class="kpi-label">Qualifying films</span>
+          <strong id="kpi-films">—</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">Median ROI</span>
+          <strong id="kpi-roi">—</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">Profitable films</span>
+          <strong id="kpi-profitable">—</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">Median budget</span>
+          <strong id="kpi-budget">—</strong>
+        </article>
+      </section>
+
+      <section class="visualization-grid" aria-label="Movie ROI visualizations">
+        <article class="panel chart-panel chart-panel-wide">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Question 1</p>
+              <h2>Which genres return the most?</h2>
+            </div>
+            <span class="chart-status">Coming next</span>
+          </div>
+          <div id="genre-chart" class="chart-placeholder" aria-live="polite">
+            Genre distribution chart will appear here.
+          </div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Question 2</p>
+              <h2>When should a movie launch?</h2>
+            </div>
+            <span class="chart-status">Coming next</span>
+          </div>
+          <div id="release-chart" class="chart-placeholder" aria-live="polite">
+            Release timing chart will appear here.
+          </div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Question 3</p>
+              <h2>Which creative partners perform?</h2>
+            </div>
+            <span class="chart-status">Coming next</span>
+          </div>
+          <div id="people-chart" class="chart-placeholder" aria-live="polite">
+            Director and cast analysis will appear here.
+          </div>
+        </article>
+      </section>
+
+      <section class="panel methodology-panel">
+        <p class="eyebrow">Methodology</p>
+        <h2>How to read this dashboard</h2>
+        <p>
+          ROI is calculated as worldwide revenue divided by budget. Movies with
+          missing budget or revenue values are excluded from ROI views. Dollar
+          values are nominal and revenue represents box office revenue only.
+        </p>
+        <p id="data-status" class="data-status" aria-live="polite">
+          Waiting for the prepared dataset.
+        </p>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
